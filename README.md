@@ -1,24 +1,52 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリ名
+search_app
 
-Things you may want to cover:
+# URL
+Herokuによるデプロイ
+https://search-app-20201229.herokuapp.com/
 
-* Ruby version
+# 説明
 
-* System dependencies
+[ransack](https://github.com/activerecord-hackery/ransack)というgemを導入し、複数条件にあった検索や「〜以下」の検索条件で商品を選択のうえ結果を表示することができます。
 
-* Configuration
 
-* Database creation
+# テーブル設計
 
-* Database initialization
+## categories テーブル
 
-* How to run the test suite
+| Column   | Type    | Options     |
+| :------- | :-----  | :---------- |
+| name     | string  | null: false |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
 
-* Deployment instructions
+- has_many :products
 
-* ...
+<br>
+
+## products テーブル
+
+| Column   | Type       | Options           |
+| :------- | :--------- | :---------------- |
+| name     | string     | null: false       |
+| size     | string     | null: false       |
+| status   | string     | null: false       |
+| price    | integer    | null: false       |
+| category | references | foreign_key: true |
+
+
+### Association
+
+- belongs_to :category
+
+# clone
+```
+% git clone https://github.com/erika618/search_app.git
+% cd search_app
+% bundle install
+% yarn install
+% rails db:create
+% rails db:migrate
+```
