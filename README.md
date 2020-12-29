@@ -49,4 +49,5 @@ https://search-app-20201229.herokuapp.com/
 % yarn install
 % rails db:create
 % rails db:migrate
+% rails db:seed
 ```
