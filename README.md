@@ -41,12 +41,22 @@ https://search-app-20201229.herokuapp.com/
 
 - belongs_to :category
 
+<br>
+
+# 使用しているバージョン等
+
+- ruby 2.6.5
+- Rails 6.0.3.4
+- MySQL
+
+<br>
+<br>
+
 # clone
 ```
 % git clone https://github.com/erika618/search_app.git
 % cd search_app
 % bundle install
-% yarn install
 % rails db:create
 % rails db:migrate
 % rails db:seed
